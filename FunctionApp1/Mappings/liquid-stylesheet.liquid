@@ -1,0 +1,26 @@
+{
+"Id": "{{ RootNode.OrderId }}",
+"Date": "{{ RootNode.OrderDate }}",
+"CustomerId": "{{ RootNode.CustomerId }}",
+"Name": "{{ RootNode.CustomerName }}",
+"Parties": [
+    {
+      "Function": "{{ RootNode.Addresses[0].Type }}",
+"StreetAndNumber": "{{ RootNode.Addresses[0].Street }} {{ RootNode.Addresses[0].Number }}",
+"PostalCode": "{{ RootNode.Addresses[0].Zip }}",
+"City": "{{ RootNode.Addresses[0].City }}",
+"Country": "{{ RootNode.Addresses[0].Country }}"
+}
+  ],
+  "Lines": [{% for orderLine in RootNode.OrderLines %}
+  {
+  "Sequence": "{{ forloop.index }}",
+  "Description": "{{ orderLine.Product }}",
+  "ProductNumber": "{{ orderLine.Id }}",
+  "UnitOfMeasure": "{{ orderLine.Unit }}",
+  "Quantity": "{{ orderLine.Quantity }}",
+  "TotalPrice": "{{ orderLine.UnitPrice }}"
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
+}
