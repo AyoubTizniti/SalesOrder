@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "HTTP_trigger_for_cosmos": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7075",
+      "launchBrowser": false
+    }
+  }
+}
