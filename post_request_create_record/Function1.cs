@@ -87,6 +87,7 @@ namespace HTTP_trigger_LA
                     {
                         // Item created or updated successfully
                         log.LogInformation("Order record stored successfully in Cosmos DB.");
+                        return new OkObjectResult(order.SalesOrder.RootNode.CustomerId);
                     }
                     else
                     {
@@ -104,7 +105,7 @@ namespace HTTP_trigger_LA
                 log.LogError(ex, "Error processing request");
             }
 
-            return new OkResult();
+            return new BadRequestResult();
         }
     }
 
