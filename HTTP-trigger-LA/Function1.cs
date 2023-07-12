@@ -93,6 +93,8 @@ namespace HTTP_trigger_LA
                         // Failed to create or update item in Cosmos DB
                         log.LogError("Failed to store order record in Cosmos DB.");
                     }
+
+                    return new OkObjectResult(order.PartitionKey);
                 }
                 else
                 {
@@ -104,7 +106,7 @@ namespace HTTP_trigger_LA
                 log.LogError(ex, "Error processing request");
             }
 
-            return new OkResult();
+            return new BadRequestResult();
         }
     }
 
