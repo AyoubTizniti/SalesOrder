@@ -14,11 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2 # v2 stands for version 2 of the action
       - name: hello
-        run: echo "checkout"
+        run: echo "Hi"
         shell: bash
   goodbye:
     runs-on: ubuntu-latest
     steps:
       - name: goodbye
-        run: echo "goodbye"
+        run: echo "Gbye"
         shell: bash
