@@ -19,7 +19,6 @@ jobs:
   goodbye:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2 # v2 stands for version 2 of the action
       - name: goodbye
         run: echo "goodbye"
         shell: bash
