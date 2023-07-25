@@ -22,3 +22,13 @@ jobs:
         - name: "dump github context"
           run: echo '${{ toJson(github.event) }}' | jq
           shell: bash
+        - name: "Create comment"
+          uses: peter-evans/create-or-update-comment@v1
+          with:
+            issue-number: ${{ github.event.issue.number }}
+            body: |
+              Thanks for opening this issue!
+              This is a comment created by a GitHub Action.
+              The body of the comment is in markdown.
+            reactions: '+1'
+            repo-token: ${{ secrets.GITHUB_TOKEN }}
