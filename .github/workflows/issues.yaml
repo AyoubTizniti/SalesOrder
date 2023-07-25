@@ -33,3 +33,17 @@ jobs:
               The body of the comment is in markdown.
             reactions: '+1'
             repo-token: ${{ secrets.GITHUB_TOKEN }}
+  comment-with-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create comment with api
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Thanks for opening this issue!'
+            })
