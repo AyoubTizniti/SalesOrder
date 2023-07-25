@@ -8,17 +8,6 @@ jobs:
   comment-with-action:
     runs-on: ubuntu-latest
     steps:
-      # - name: comment with action
-      #   uses: actions/github-script@v3
-      #   with:
-      #     github-token: ${{ secrets.GITHUB_TOKEN }}
-      #     script: |
-      #       github.issues.createComment({
-      #         issue_number: context.issue.number,
-      #         owner: context.repo.owner,
-      #         repo: context.repo.repo,
-      #         body: 'Thanks for opening this issue!'
-      #       })
         - name: "dump github context"
           run: echo '${{ toJson(github.event) }}' | jq
           shell: bash
