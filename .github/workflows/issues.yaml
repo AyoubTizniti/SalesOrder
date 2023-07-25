@@ -20,5 +20,5 @@ jobs:
       #         body: 'Thanks for opening this issue!'
       #       })
         - name: "dump github context"
-          run: echo "${{ toJson(github.event) }}" | jq
+          run: echo '${{ toJson(github.event) }}' | jq
           shell: bash
