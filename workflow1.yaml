@@ -1,0 +1,14 @@
+name: first workflow
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: run workflow2
+        uses: ./.github/workflows/workflow2
+        
