@@ -1,24 +1,24 @@
-name: first workflow
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch:
+# name: first workflow
+# on:
+#   push:
+#     branches:
+#       - main
+#   pull_request:
+#     branches:
+#       - main
+#   workflow_dispatch:
   
-jobs:
-  hello:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2 # v2 stands for version 2 of the action
-      - name: hello
-        run: echo "Hi"
-        shell: bash
-  goodbye:
-    runs-on: ubuntu-latest
-    steps:
-      - name: goodbye
-        run: echo "Gbye"
-        shell: bash
+# jobs:
+#   hello:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2 # v2 stands for version 2 of the action
+#       - name: hello
+#         run: echo "Hi"
+#         shell: bash
+#   goodbye:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: goodbye
+#         run: echo "Gbye"
+#         shell: bash
